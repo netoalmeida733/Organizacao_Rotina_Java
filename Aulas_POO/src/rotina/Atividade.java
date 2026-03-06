@@ -6,21 +6,23 @@ public class Atividade {
 	private int horaInicio;
 	private int horaFim;
 	private int duracao;
+	private int treino;
 	
 	
 	//METODO CONSTRUTOR 
-	public Atividade(String trabalho, int horaInicio, int horaFim) {
+	public Atividade(String trabalho, int horaInicio, int horaFim , int treino) {
 		super();
 		this.tipo = trabalho;
 		this.horaInicio = horaInicio;
 		this.horaFim = horaFim;
 		this.duracao = horaFim - horaInicio;
+		this.treino = treino;
 	}
 	
 	//METODO PRINCIPAL 
 	public void adicionar() {
 		System.out.println("Atividade adicionada com sucesso: ");
-		System.out.printf("Tipo: %s\nHorario: %dh às %dh\nDuraçao: %d horas\n", tipo , horaInicio , horaFim, duracao);
+		System.out.printf("Tipo: %s\nHorario: %dh às %dh\nDuraçao: %d horas\nTreino: %d\n", tipo , horaInicio , horaFim, duracao, treino );
 	}
 	
 	
@@ -52,4 +54,10 @@ public class Atividade {
 		this.duracao = duracao;
 	}
 	
+	public int getTreino() {
+		return treino;
+	}
+	public void setTreino(int treino) {
+		this.treino = treino;
+	}
 }
