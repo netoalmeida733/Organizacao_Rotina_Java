@@ -6,23 +6,33 @@ public class Atividade {
 	private int horaInicio;
 	private int horaFim;
 	private int duracao;
-	private int treino;
+	private boolean treino;
 	
 	
 	//METODO CONSTRUTOR 
-	public Atividade(String trabalho, int horaInicio, int horaFim , int treino) {
+	public Atividade(String trabalho, int horaInicio, int horaFim , boolean treino) {
 		super();
 		this.tipo = trabalho;
 		this.horaInicio = horaInicio;
 		this.horaFim = horaFim;
 		this.duracao = horaFim - horaInicio;
 		this.treino = treino;
+		calcularDuracao();
+	}
+	
+	private void calcularDuracao() {
+		if(horaFim >= horaInicio) {
+			duracao = horaFim - horaInicio;
+		}else {
+			duracao = (24 - horaInicio) + horaFim;
+		}
 	}
 	
 	//METODO PRINCIPAL 
 	public void adicionar() {
 		System.out.println("Atividade adicionada com sucesso: ");
-		System.out.printf("Tipo: %s\nHorario: %dh às %dh\nDuraçao: %d horas\nTreino: %d\n", tipo , horaInicio , horaFim, duracao, treino );
+		System.out.printf("Tipo: %s\nHorario: %dh às %dh\nDuraçao: %d horas\nTreino: %s\n", tipo , horaInicio , horaFim, duracao, 
+				treino ? "Feito" : "Nao feito");
 	}
 	
 	
@@ -54,10 +64,10 @@ public class Atividade {
 		this.duracao = duracao;
 	}
 	
-	public int getTreino() {
+	public boolean getTreino() {
 		return treino;
 	}
-	public void setTreino(int treino) {
+	public void setTreino(boolean treino) {
 		this.treino = treino;
 	}
 }

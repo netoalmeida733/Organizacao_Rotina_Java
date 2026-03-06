@@ -3,8 +3,8 @@ package rotina;
 import java.util.ArrayList;
 
 public class ResumoDia {
-		ArrayList<Atividade> atividades = new ArrayList<>();
-	//METODO PRINCIPAL
+		
+		//METODO PRINCIPAL
 	public void resumoDia(ArrayList<Atividade> atividades) {
 		int totalHoras = 0;
 		for (Atividade a : atividades) {
